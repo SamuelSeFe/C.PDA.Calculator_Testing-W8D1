@@ -32,7 +32,15 @@ describe("Calculator", () => {
     cy.get(".display").should("contain", "18");
   })
 
-  it("should display correct output for a range of numbers (negative)", () => {
+  it("should display correct output for a range of numbers (positive number)", () => {
+    cy.get("#number7").click();
+    cy.get("#operator_add").click();
+    cy.get("#number7").click();
+    cy.get("#operator-equals").click();
+    cy.get(".display").should("contain", "14");
+  })
+
+  it("should display correct output for a range of numbers (negative number)", () => {
     cy.get("#number2").click();
     cy.get("#operator-subtract").click();
     cy.get("#number7").click();
